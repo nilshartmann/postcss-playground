@@ -74,4 +74,4 @@ const createSpecData = (name: string) => {
   console.log('SPEC DATA WRITTEN TO ' + outFile);
 };
 
-  createSpecData('very-simple');
+  // createSpecData('very-simple');

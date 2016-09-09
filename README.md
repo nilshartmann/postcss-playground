@@ -1,6 +1,6 @@
 # PostCSS Playground
 
-This is my playground for PostCSS experiments. It consits of a simple plug-in (`simple-grid`), that is implemented in TypeScript. 
+This is my playground for PostCSS experiments. It consists of a simple plug-in (`simple-grid`), that is implemented in TypeScript. 
 
 ## Plug-in
 
