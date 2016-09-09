@@ -1,0 +1,20 @@
+a1 { font-size: 123px }
+.row, .column { box-sizing: border-box; margin: 0; padding: 0 }
+.column { float: left }
+.row { max-width: 75rem; margin-left: auto; margin-right: auto }
+.row:before, .row:after { content: " "; display: table }
+.row:after { clear: both }
+.sg-small-3 { width: 100.00000% }
+.sg-small-offset-3 { margin-left: 100.00000% }
+.sg-small-2 { width: 66.66667% }
+.sg-small-offset-2 { margin-left: 66.66667% }
+.sg-small-1 { width: 33.33333% }
+.sg-small-offset-1 { margin-left: 33.33333% }
+@media screen and (min-width: 30rem) {
+ .sg-large-3 { width: 100.00000% }
+ .sg-large-offset-3 { margin-left: 100.00000% }
+ .sg-large-2 { width: 66.66667% }
+ .sg-large-offset-2 { margin-left: 66.66667% }
+ .sg-large-1 { width: 33.33333% }
+ .sg-large-offset-1 { margin-left: 33.33333% } }
+a2 { color: red }

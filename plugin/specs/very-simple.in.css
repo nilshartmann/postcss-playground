@@ -1,0 +1,4 @@
+.simple-grid {
+  --sg-max-width: 960px;
+  --sg-columns: 3;
+}

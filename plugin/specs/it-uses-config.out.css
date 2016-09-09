@@ -1,0 +1,56 @@
+a1 { font-size: 123px }
+.row, .column { box-sizing: border-box; margin: 0; padding: 0 }
+.column { float: left }
+.row { max-width: 75rem; margin-left: auto; margin-right: auto }
+.row:before, .row:after { content: " "; display: table }
+.row:after { clear: both }
+.sg-small-12 { width: 100.00000% }
+.sg-small-offset-12 { margin-left: 100.00000% }
+.sg-small-11 { width: 91.66667% }
+.sg-small-offset-11 { margin-left: 91.66667% }
+.sg-small-10 { width: 83.33333% }
+.sg-small-offset-10 { margin-left: 83.33333% }
+.sg-small-9 { width: 75.00000% }
+.sg-small-offset-9 { margin-left: 75.00000% }
+.sg-small-8 { width: 66.66667% }
+.sg-small-offset-8 { margin-left: 66.66667% }
+.sg-small-7 { width: 58.33333% }
+.sg-small-offset-7 { margin-left: 58.33333% }
+.sg-small-6 { width: 50.00000% }
+.sg-small-offset-6 { margin-left: 50.00000% }
+.sg-small-5 { width: 41.66667% }
+.sg-small-offset-5 { margin-left: 41.66667% }
+.sg-small-4 { width: 33.33333% }
+.sg-small-offset-4 { margin-left: 33.33333% }
+.sg-small-3 { width: 25.00000% }
+.sg-small-offset-3 { margin-left: 25.00000% }
+.sg-small-2 { width: 16.66667% }
+.sg-small-offset-2 { margin-left: 16.66667% }
+.sg-small-1 { width: 8.33333% }
+.sg-small-offset-1 { margin-left: 8.33333% }
+@media screen and (min-width: 40em) {
+ .sg-large-12 { width: 100.00000% }
+ .sg-large-offset-12 { margin-left: 100.00000% }
+ .sg-large-11 { width: 91.66667% }
+ .sg-large-offset-11 { margin-left: 91.66667% }
+ .sg-large-10 { width: 83.33333% }
+ .sg-large-offset-10 { margin-left: 83.33333% }
+ .sg-large-9 { width: 75.00000% }
+ .sg-large-offset-9 { margin-left: 75.00000% }
+ .sg-large-8 { width: 66.66667% }
+ .sg-large-offset-8 { margin-left: 66.66667% }
+ .sg-large-7 { width: 58.33333% }
+ .sg-large-offset-7 { margin-left: 58.33333% }
+ .sg-large-6 { width: 50.00000% }
+ .sg-large-offset-6 { margin-left: 50.00000% }
+ .sg-large-5 { width: 41.66667% }
+ .sg-large-offset-5 { margin-left: 41.66667% }
+ .sg-large-4 { width: 33.33333% }
+ .sg-large-offset-4 { margin-left: 33.33333% }
+ .sg-large-3 { width: 25.00000% }
+ .sg-large-offset-3 { margin-left: 25.00000% }
+ .sg-large-2 { width: 16.66667% }
+ .sg-large-offset-2 { margin-left: 16.66667% }
+ .sg-large-1 { width: 8.33333% }
+ .sg-large-offset-1 { margin-left: 8.33333% } }
+a2 { color: red }

@@ -1,0 +1,3 @@
+a1 { font-size: 123px }
+.simple-grid { --sg-columns: 3; --sg-large-min-width: 30rem  }
+a2 { color: red }
