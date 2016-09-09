@@ -7,7 +7,7 @@
     "install-types": "typings install",
     "test": "mocha --opts mocha.opts",
     "start": "webpack-dev-server --hot --config webpack.config.js --port 3333",
-    "plugin:build": "rm -rf plugin/dist; mkdir plugin/dist; tsc plugin/postcss-simple-grid.ts --outDir plugin/dist",
+    "plugin:build": "rm -rf plugin/dist; mkdir plugin/dist; tsc plugin/postcss-simple-grid.ts --outDir plugin/dist; tslint plugin/postcss-simple-grid.ts",
     "plugin:test": "mocha --opts mocha.opts --watch"
   },
   "keywords": [],
@@ -23,6 +23,7 @@
     "postcss-loader": "^0.11.1",
     "style-loader": "^0.13.1",
     "ts-node": "^1.3.0",
+    "tslint": "^3.15.1",
     "typescript": "^2.0.2",
     "typings": "^1.3.3",
     "webpack": "^1.13.2",

@@ -11,11 +11,11 @@ describe('simple-grid transformations', () => {
       expect(determineConfigName('xyz')).to.equal(null);
       expect(determineConfigName('--gs-')).to.equal(null);
       expect(determineConfigName('--sg-')).to.equal(null);
-    })
+    });
     it('correctly transform names', () => {
-      expect(determineConfigName('--sg-columns')).to.equal("columns");
-      expect(determineConfigName('--sg-large-max-width')).to.equal("largeMaxWidth");
-    })
+      expect(determineConfigName('--sg-columns')).to.equal('columns');
+      expect(determineConfigName('--sg-large-max-width')).to.equal('largeMaxWidth');
+    });
   });
   it('uses default configuration', () => {
     checkFromTestFile('it-uses-config');
@@ -33,7 +33,7 @@ const checkFromTestFile = (name: string) => {
   const outCss = fs.readFileSync(outFile).toString().trim();
 
   check(inCss, outCss);
-}
+};
 
 /** 
  * From: https://github.com/jedmao/postcss-circle/blob/master/test/plugin.ts 
@@ -52,7 +52,7 @@ const check = (actual: string, expected?: string | RegExp) => {
   ).to.equal(
     stripTabs(<string>expected)
     );
-}
+};
 
 function stripTabs(input: string) {
   return input.replace(/\t/g, '');
