@@ -20,7 +20,7 @@ describe('simple-grid transformations', () => {
   it('uses default configuration', () => {
     checkFromTestFile('it-uses-config');
   });
-    it('renders 3 col grid with custom large break point', () => {
+  it('renders 3 col grid with custom large break point', () => {
     checkFromTestFile('it-creates-3-col-grid-with-30em-lmq');
   });
 });
@@ -40,22 +40,22 @@ const checkFromTestFile = (name: string) => {
  * Credits to https://github.com/jedmao 
  * */
 const check = (actual: string, expected?: string | RegExp) => {
-		const processor = postcss().use(plugin);
-		if (expected instanceof RegExp) {
+  const processor = postcss().use(plugin);
+  if (expected instanceof RegExp) {
     expect(() => {
       return processor.process(stripTabs(actual)).css;
     }).to.throw(expected);
     return;
-		}
-		expect(
+  }
+  expect(
     processor.process(stripTabs(actual)).css
-		).to.equal(
+  ).to.equal(
     stripTabs(<string>expected)
     );
 }
 
 function stripTabs(input: string) {
-		return input.replace(/\t/g, '');
+  return input.replace(/\t/g, '');
 }
 
 // This is only to create test data ---------------------------------------------------------
@@ -74,4 +74,4 @@ const createSpecData = (name: string) => {
   console.log('SPEC DATA WRITTEN TO ' + outFile);
 };
 
-  // createSpecData('very-simple');
+// createSpecData('very-simple');

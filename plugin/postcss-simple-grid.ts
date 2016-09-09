@@ -5,14 +5,14 @@ const errorContext = {
 };
 
 export const determineConfigName = (prop: string) => {
-		if (prop.length < 6 || prop.substring(0, 5) !== '--sg-') {
+	if (prop.length < 6 || prop.substring(0, 5) !== '--sg-') {
 		return null;
-		}
+	}
 
-		let lastChar;
-		let result = "";
+	let lastChar;
+	let result = "";
 
-		for (let i = 5; i < prop.length; i++) {
+	for (let i = 5; i < prop.length; i++) {
 		const c = prop.charAt(i);
 		if (c === '-') {
 			lastChar = c;
@@ -21,20 +21,20 @@ export const determineConfigName = (prop: string) => {
 
 		result += (lastChar === '-' ? c.toUpperCase() : c);
 		lastChar = c;
-		}
+	}
 
-		return result;
+	return result;
 }
 
 const createNode = (selector: string, ...decls: string[]) => {
-		const node = createRule({ selector });
-		decls.forEach(d => {
+	const node = createRule({ selector });
+	decls.forEach(d => {
 		const j = d.indexOf(':');
 		const prop = d.substring(0, j).trim();
 		const value = d.substring(j + 1).trim();
 		node.append(createDecl({ prop, value }));
-		});
-		return node;
+	});
+	return node;
 };
 
 const insertNodes = (rootNode: Container, afterNode: Node, newNodes: Node[]): Node => {
@@ -46,19 +46,19 @@ const buildGridConfig = (gridNode: Container) => {
 		columns: 12,
 		maxWidth: '90rem',
 		largeMinWidth: '40em'
-		};
+	};
 
-		// Iterate over config properties
-		gridNode.walkDecls(candidate => {
+	// Iterate over config properties
+	gridNode.walkDecls(candidate => {
 		const prop = candidate.prop;
 		const configName = determineConfigName(prop);
 		if (!configName || !gridOptions.hasOwnProperty(configName)) {
 			throw candidate.error(`Invalid Property '${prop}'`, errorContext);
 		}
 		gridOptions[configName] = candidate.value;
-		});
+	});
 
-		return gridOptions;
+	return gridOptions;
 }
 
 export default plugin("postcss-simple-grid", () => {
