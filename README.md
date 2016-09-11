@@ -1,6 +1,6 @@
 # PostCSS Playground
 
-This is my playground for PostCSS experiments. It consists of a simple plug-in (`simple-grid`), that is implemented in TypeScript. 
+This is my playground for [PostCSS](http://postcss.org/) experiments. It consists of a simple plug-in (`simple-grid`), that is implemented in [TypeScript](https://www.typescriptlang.org/). 
 
 ## Plug-in
 
@@ -52,16 +52,34 @@ Will be transformed to something like this:
 }
 ```
 
-# Install and run
 
+# Usage
 1. Clone this repo
 2. Run `npm install`
-3. Run `npm run install-types` to install the TypeScript type definitions for PostCSS etc
-4. Run `npm test` to execute the plug-in tests
-5. Run `npm plugin:build` to build the plug-in
-6. Run `npm start` to start a webpack dev server. The sample "applications" defines a single CSS file that makes use of the plugin. The result can be found at http://localhost:3333
 
+To build the plug-in, run `npm build`. This will build the plugin to `plugin/dist`.
 
+Otherwise you can run a [webpack dev server](https://webpack.github.io/docs/webpack-dev-server.html) for developing the plug-in itself (see below)
 
+## Run and test the plug-in (development mode)
 
+1. Run `npm start` to start a webpack dev server. 
+2. Open http://localhost:3333 to see the example page.
+
+The webpack server detects changes both to the example stylesheets (`example/styles.css`) and also on the source code of the plugin. (`plugin/src`). Changes to these file 
+trigger webpack to re-build the final CSS file.
+This way you can develop the plug-in and see it's results for testing very easy in your browser.
+
+To make it easier to see the generated CSS code the webpack configuration adds the [ExtractTextPlugin](https://github.com/webpack/extract-text-webpack-plugin) to write the CSS to it's own file. You can watch it in your browser.
+The downside is, that files generated with `ExtractTextPlugin` cannot be hot reloaded, so you have to refresh your browser manually.
+
+## Run the plug-in tests
+
+There are some tests for the plug-in using [mocha](https://mochajs.org/) test framework and [chai](http://chaijs.com/) assertion library.
+You can run the plug-in tests with `npm test`. This commands starts a mocha process in watching mode so that changes to the plug-in's source code lead to re-execution of the test suite.
+
+## Why webpack at all?
+
+For building a postcss plug-in Webpack might not be the perfect choice (consier an npm-only or grunt/gulp-based build process insteadt). But as I'm using
+webpack in my [React](https://facebook.github.io/react/) projects I just wanted to find a way how to integrate postcss (including developing own plug-ins) in a webpack-based build process.
 

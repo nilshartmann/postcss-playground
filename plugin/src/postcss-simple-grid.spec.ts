@@ -2,7 +2,9 @@ import * as fs from 'fs';
 
 import { expect } from 'chai';
 import * as postcss from 'postcss';
-import plugin, { determineConfigName } from './postcss-simple-grid';
+import plugin from './postcss-simple-grid';
+
+import { determineConfigName } from './postcss-simple-grid-logic';
 
 
 describe('simple-grid transformations', () => {
@@ -26,8 +28,8 @@ describe('simple-grid transformations', () => {
 });
 
 const checkFromTestFile = (name: string) => {
-  const inFile = `${__dirname}/specs/${name}.in.css`;
-  const outFile = `${__dirname}/specs/${name}.out.css`;
+  const inFile = `${__dirname}/testdata/${name}.in.css`;
+  const outFile = `${__dirname}/testdata/${name}.out.css`;
 
   const inCss = fs.readFileSync(inFile).toString().trim();
   const outCss = fs.readFileSync(outFile).toString().trim();
@@ -60,8 +62,8 @@ function stripTabs(input: string) {
 
 // This is only to create test data ---------------------------------------------------------
 const createSpecData = (name: string) => {
-  const inFile = `${__dirname}/specs/${name}.in.css`;
-  const outFile = `${__dirname}/specs/${name}.out.css`;
+  const inFile = `${__dirname}/testdata/${name}.in.css`;
+  const outFile = `${__dirname}/testdata/${name}.out.css`;
 
   console.log('READING SPEC DATA FROM ' + inFile);
   const inCss = fs.readFileSync(inFile).toString().trim();

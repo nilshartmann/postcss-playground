@@ -96,7 +96,8 @@ const buildGridConfig = (gridNode: Container): IGridConfig => {
 /**
  * Handles the CSS '.simple-grid' rule and builds the grid from it
  */
-const handleGrid = (root: Root, gridRule: Rule) => {
+export const handleGrid = (root: Root, gridRule: Rule) => {
+  console.log('------------------- HANDLE GRID -------------------');
   // this will hold all rules that have been created during the transformation
   const gridRules: Node[] = [];
 
@@ -135,12 +136,4 @@ const handleGrid = (root: Root, gridRule: Rule) => {
   // remove the '.simple-grid' rule from the output
   gridRule.remove();
 };
-
-export default plugin('postcss-simple-grid', () => root => {
-  root.walkRules(theRule => {
-    if (theRule.selector === '.simple-grid') {
-      handleGrid(root, theRule);
-    }
-  });
-});
 

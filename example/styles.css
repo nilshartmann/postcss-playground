@@ -1,0 +1,9 @@
+.simple-grid {
+  --sg-max-width: 900px
+}
+
+html {
+  background-color: lightgray;
+}
+
+
