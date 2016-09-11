@@ -1,4 +1,4 @@
-import { plugin, Root, Container, Node, Rule, rule as createRule, decl as createDecl } from 'postcss';
+import { Root, Container, Node, Rule, rule as createRule, decl as createDecl } from 'postcss';
 
 const errorContext = {
   plugin: 'postcss-simple-grid'
@@ -97,7 +97,6 @@ const buildGridConfig = (gridNode: Container): IGridConfig => {
  * Handles the CSS '.simple-grid' rule and builds the grid from it
  */
 export const handleGrid = (root: Root, gridRule: Rule) => {
-  console.log('------------------- HANDLE GRID -------------------');
   // this will hold all rules that have been created during the transformation
   const gridRules: Node[] = [];
 
@@ -127,7 +126,7 @@ export const handleGrid = (root: Root, gridRule: Rule) => {
   insertNodes(root, gridRule, [
     createConfiguredRule('.row, .column', 'box-sizing: border-box', 'margin: 0', 'padding: 0'),
     createConfiguredRule('.column', 'float: left'),
-    createConfiguredRule('.row', 'max-width: 75rem', 'margin-left: auto', 'margin-right: auto'),
+    createConfiguredRule('.row', `max-width: ${gridOptions.maxWidth}`, 'margin-left: auto', 'margin-right: auto'),
     createConfiguredRule('.row:before, .row:after', 'content: " "', 'display: table'),
     createConfiguredRule('.row:after', 'clear: both'),
     ...gridRules

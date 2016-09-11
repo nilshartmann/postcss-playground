@@ -6,7 +6,6 @@ import plugin from './postcss-simple-grid';
 
 import { determineConfigName } from './postcss-simple-grid-logic';
 
-
 describe('simple-grid transformations', () => {
   describe('determineConfigName works', () => {
     it('refuses properties not starting with prefix', () => {
@@ -24,6 +23,9 @@ describe('simple-grid transformations', () => {
   });
   it('renders 3 col grid with custom large break point', () => {
     checkFromTestFile('it-creates-3-col-grid-with-30em-lmq');
+  });
+  it('sets maxwidth of rows correctly', () => {
+    checkFromTestFile('maxwidth-is-configurable');
   });
 });
 
@@ -76,4 +78,4 @@ const createSpecData = (name: string) => {
   console.log('SPEC DATA WRITTEN TO ' + outFile);
 };
 
-// createSpecData('very-simple');
+// createSpecData('maxwidth-is-configurable');

@@ -1,7 +1,7 @@
 a1 { font-size: 123px }
 .row, .column { box-sizing: border-box; margin: 0; padding: 0 }
 .column { float: left }
-.row { max-width: 75rem; margin-left: auto; margin-right: auto }
+.row { max-width: 90rem; margin-left: auto; margin-right: auto }
 .row:before, .row:after { content: " "; display: table }
 .row:after { clear: both }
 .sg-small-3 { width: 100.00000% }
